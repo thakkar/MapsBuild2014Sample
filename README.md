@@ -1,5 +1,5 @@
 # MapsBuild2014Sample
-This same code has been upgraded from //build/ 2014 sample talk. I am providing the sample as is without making any significant changes. UX is off and not adaptive.
+This same code has been upgraded from //build/ 2014 sample talk. I am providing the sample as is without making any significant changes. UX is not neat and not adaptive.
 
 //*********************************************************
 //
