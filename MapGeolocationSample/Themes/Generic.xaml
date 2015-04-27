@@ -1,0 +1,76 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Maps="clr-namespace:Windows.UI.Xaml.Controls.Maps"
+    xmlns:local="using:MapGeolocationSample"
+    xmlns:mapcc="using:MapGeolocationSample.MapContentControls">
+    
+    <!-- Default Style used for Pushpin -->
+    <Style TargetType="mapcc:PushPin">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mapcc:PushPin">
+                    <Grid x:Name="ContentGrid" FlowDirection="LeftToRight">
+                        <StackPanel Orientation="Vertical">
+                            <Grid Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" 
+                                  HorizontalAlignment="Left" 
+                                  MinHeight="31" 
+                                  MinWidth="29">
+                                <ContentPresenter x:Name="Presenter"
+                                                  Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}"
+                                                  FlowDirection="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=FlowDirection}" 
+                                                  Margin="4"/>
+                            </Grid>
+                            <Polygon Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" 
+                                     Points="0,0 29,0 0,29" 
+                                     Width="29" 
+                                     Height="29" 
+                                     HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="NormalizedAnchorPoint" Value="0.0,1.0" />
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+    <!-- Default Style used for MePOI -->
+    <Style TargetType="mapcc:UserLocationMarker">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mapcc:UserLocationMarker">
+                    <Grid x:Name="ContentGrid">
+                        <!--<Polygon Fill="{TemplateBinding Background}" 
+                                 Points="0,17 17,0 34,17 17,34" 
+                                 Width="34" 
+                                 Height="34" 
+                                 HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center" 
+                                 Stroke="#FF807F7C" 
+                                 StrokeThickness="1"/>-->
+                        <Ellipse Fill="{TemplateBinding Background}" 
+                                 Width="27" Height="27" 
+                                 HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center"/>
+                        <Ellipse Fill="{TemplateBinding Background}" 
+                                 Width="23" Height="23" 
+                                 HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center"
+                                 Stroke="Black" 
+                                 StrokeThickness="2.5"/>
+                        <Ellipse Fill="{TemplateBinding Foreground}" 
+                                 Width="12" Height="12" 
+                                 HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="NormalizedAnchorPoint" Value="0.5,0.5" />
+        <Setter Property="Background" Value="White"/>        
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+</ResourceDictionary>
